@@ -8,11 +8,13 @@
 </head>
 <body>
   
-<nav class="navbar navbar-default navbar-static-top navbar-inverse">
+<nav class="navbar navbar-default navbar-static-top navbar-inverse ">
   <div class="container">
-    <button type="button" class="btn btn-default navbar-btn">Sign in</button>
-    <button type="button" class="btn btn-default navbar-btn">Sign out</button>
-    <button type="button" class="btn btn-default navbar-btn">About</button>
+
+    
+    <%= link_to 'About Page', about_path(1)  %>  
+    <%= link_to 'Sign In', new_user_session_path %>
+    
   </div>
 </nav>
 

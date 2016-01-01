@@ -21,17 +21,16 @@ class ListsControllerTest < ActionController::TestCase
     
     
   
-    assert_difference('Article.count') do
+   
       
-      post :create, article: {name: 'Some title'}
+      post :create, list: {name: 'Some title'}
       
-    end
+    
    
    
   
-    assert_redirected_to root_path
-    
-    assert_equal 1, list.count
+    assert_redirected_to article_path(assigns(:list))
+    assert_equal 'Article was successfully created.', flash[:notice]
     
   end
   

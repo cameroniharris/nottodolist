@@ -1,8 +1,23 @@
-<h1> <b>Pizza Nomster </b></h1>
-<%= @list.inspect %>
-<li>
-  <%= link_to new_list_path do %>
-    <i class="glyphicon glyphicon-plus-sign"></i>
-    New Place
+
+<center>
+  <li>
+    <%= link_to new_list_path do %>
+      <i class="glyphicon glyphicon-plus-sign"></i>
+      New Item
+    <% end %>
+  </li>
+  
+  <% @lists.each do |list| %>
+    <div>
+      <h1><%= list.name %></h1><br />
+    </div>
+  
+    <hr />
+    
+    <% if list.user.present? %>
+      <small><%= list.user.email %></small>
+    <% end %>
   <% end %>
-</li>
+  
+
+</center>
