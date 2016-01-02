@@ -6,18 +6,17 @@
       New Item
     <% end %>
   </li>
+  <h1> I Will Not...</h1>
   
   <% @lists.each do |list| %>
     <div>
-      <h1><%= list.name %></h1><br />
+      <h1><%= link_to list.name, list_path(list) %></h1><br />
     </div>
-  
     <hr />
     
-    <% if list.user.present? %>
-      <small><%= list.user.email %></small>
-    <% end %>
   <% end %>
   
+  
+    
 
 </center>

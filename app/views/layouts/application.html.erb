@@ -9,40 +9,29 @@
 <body>
   
 <nav class="navbar navbar-default navbar-static-top navbar-inverse ">
-  <div class="container">
+  <ul class="nav navbar-nav navbar-left">
 
+    <a class="navbar-brand" href="https://nolist-cameroniharris.c9users.io">Not To Do List</a>
+    <li><%= link_to 'About Page', about_path(1) %> </li>
+    <li><%= link_to 'My No List', lists_path%> </li>
+   
     
-    <%= link_to 'About Page', about_path(1)  %>  
-    <%= link_to 'Sign In', new_user_session_path %>
-    
-  </div>
+  </ul>
+  
+    <ul class="nav navbar-nav navbar-right">
+    <% if user_signed_in? %>
+        <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+      <% else %>
+        <li><%= link_to 'Sign in', new_user_session_path %></li>
+        <li><%= link_to 'Sign up', new_user_registration_path %></li>
+    <% end %>
+     
+    </ul>
 </nav>
 
 <nav class="navbar navbar-default navbar-fixed-bottom navbar-inverse social">
   <div id="footer">
-    <div class="container">
-      <div class="col-xs-12 col-sm-3 social">
-        <b>Github</b>
-        <br class="clr"/>
-        <br class="clr"/>
-        
-        <%= link_to 'https://github.com/cameroniharris' do %>
-          <%= image_tag 'github.png', :class => 'social-button' %>
-        <% end %>
-        
-        
-      </div>
-      <div class="col-xs-12 col-sm-3 social">
-        <b>Linkedin</b>
-        <br class="clr"/>
-        <br class="clr"/>
-        <%= link_to 'https://www.linkedin.com/in/cameron-harris-78207172
-' do %>
-          <%= image_tag 'linkedin.png', :class => 'social-button' %>
-        <% end %>
-        
-      </div>
-    
+
     </div>
   </div>
 </nav>
