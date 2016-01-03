@@ -19,16 +19,8 @@ class ListsControllerTest < ActionController::TestCase
   
   test "Item is added to the database" do
     
-    
-  
-   
-      
       post :create, list: {name: 'Some title'}
-      
-    
-   
-   
-  
+
     assert_redirected_to article_path(assigns(:list))
     assert_equal 'Article was successfully created.', flash[:notice]
     

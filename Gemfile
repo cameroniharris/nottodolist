@@ -29,9 +29,10 @@ gem 'factory_girl_rails'
 # User login and signout gem
 gem 'devise'
 
+# Easy form creation
 gem 'simple_form'
 
-
+#Twitter bootstrap
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'sprockets', '2.11.0'
 
